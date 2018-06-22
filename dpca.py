@@ -163,7 +163,7 @@ def DPCA(dist, percent):
 
 if __name__ == '__main__':
     iris = load_iris()
-    points = iris["data"][:, :2]
+    points = iris["data"][:, 2:4]
     labels = iris["target"]
     print('read done!')
 
@@ -178,8 +178,10 @@ if __name__ == '__main__':
     # This can only plot 2D data. If you want to test your data, comment the following codes
     fig = plt.figure()
     plt.subplot(121)
+    plt.title("real")
     plt.scatter(points[:, 0], points[:, 1], c=labels)
     plt.subplot(122)
+    plt.title("predicted")
     plt.scatter(points[:, 0], points[:, 1], c=result)
     plt.show()
 
